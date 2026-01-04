@@ -371,32 +371,72 @@ $(function () {
 
 });
 
+/* test-dropdown menu start */
+$(document).ready(function() {
+        // Prevent closing dropdown when clicking inside a sub-menu
+        $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+            if (!$(this).next().hasClass('show')) {
+                $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+            }
+            var $subMenu = $(this).next(".dropdown-menu");
+            $subMenu.toggleClass('show');
 
-
-/* Custom js for nested drop down menu start*/
- $(document).ready(function() {
-            $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
-                var $el = $(this);
-                var $parent = $(this).offsetParent(".dropdown-menu");
-                if (!$(this).next().hasClass('show')) {
-                    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
-                }
-                $(this).next(".dropdown-menu").toggleClass('show');
-
-                // Adjust position for nested dropdowns
-                var dropdownMenu = $(this).next('.dropdown-menu');
-                var dropdownOffset = $(dropdownMenu).offset();
-                var $window = $(window);
-                var menuWidth = $(dropdownMenu).width();
-                var parentWidth = $parent.width();
-
-                if ((dropdownOffset.left + menuWidth) > ($window.width() + $window.scrollLeft())) {
-                    $(dropdownMenu).removeClass('dropdown-menu-right').addClass('dropdown-menu-left');
-                } else if ((dropdownOffset.left - $parent.offset().left) < 0) {
-                    $(dropdownMenu).removeClass('dropdown-menu-left').addClass('dropdown-menu-right');
-                }
-
-                e.stopPropagation();
+            $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+                $('.dropdown-submenu .show').removeClass("show");
             });
+
+            return false;
         });
-/* Custom js for nested drop down menu start*/
+    });
+/* test-dropdown menu end */
+
+/* test-shan read more section and share button combined in blog posts start*/
+
+document.addEventListener('DOMContentLoaded', function() {
+  const blogCards = document.querySelectorAll('.blog-card');
+
+  // Loop through each blog card on the page
+  blogCards.forEach(card => {
+    // Get the references for the buttons and elements within each card
+    const readMoreBtn = card.querySelector('.read-more-btn');
+    const expandableText = card.querySelector('.expandable-text');
+    const shareBtn = card.querySelector('.share-btn');
+    
+    // Get the blog post's title for sharing
+    const blogTitle = card.querySelector('h1').textContent;
+
+    // Add click listener for the "Read more" button
+    if (readMoreBtn) {
+      readMoreBtn.addEventListener('click', function() {
+        card.classList.toggle('expanded');
+        if (card.classList.contains('expanded')) {
+          readMoreBtn.textContent = 'Read less';
+          // Set the max-height to the full scroll height for a smooth transition
+          expandableText.style.maxHeight = expandableText.scrollHeight + 'px';
+        } else {
+          readMoreBtn.textContent = 'Read more';
+          // Reset to the initial max-height
+          expandableText.style.maxHeight = '100px';
+        }
+      });
+    }
+
+    // Add click listener for the "Share" button
+    if (shareBtn && navigator.share) {
+      shareBtn.addEventListener('click', () => {
+        navigator.share({
+          title: blogTitle,
+          text: 'Check out this blog post: ' + blogTitle,
+          url: window.location.href
+        }).catch(console.error);
+      });
+    } else if (shareBtn) {
+      // Fallback for browsers that do not support the Web Share API
+      shareBtn.addEventListener('click', () => {
+        alert('Sharing is not supported on your browser. Please copy and paste the URL to share.');
+      });
+    }
+  });
+});
+
+/* test-shan read more section and share button combined in blog posts end*/
