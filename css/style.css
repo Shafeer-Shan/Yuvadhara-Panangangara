@@ -29,7 +29,7 @@ html {
 body {
     color: #666666;
     font-size: 14px;
-    font-family: 'Raleway', sans-serif;
+    font-family: "Rajdhani", "sans-serif";
     line-height: 1.80857;
     font-weight: normal;
     overflow-x: hidden;
@@ -53,37 +53,37 @@ h4,
 h5,
 h6 {
     letter-spacing: 0;
-    font-weight: normal;
+    font-weight: bold;
     position: relative;
     padding: 0 0 10px 0;
     font-weight: normal;
     line-height: normal;
     color: #111111;
-    margin: 0
+    margin: 0;
 }
 
 h1 {
-    font-size: 24px
+    font-size: 3.5vw;
 }
 
 h2 {
-    font-size: 22px
+    font-size: 2.5vw;
 }
 
 h3 {
-    font-size: 18px
+    font-size: 1.8vw;
 }
 
 h4 {
-    font-size: 16px
+    font-size: 1.5vw;
 }
 
 h5 {
-    font-size: 14px
+    font-size: 1vw;
 }
 
 h6 {
-    font-size: 13px
+    font-size: 0.8vw;
 }
 
 *,
@@ -118,10 +118,10 @@ ol {
 }
 
 p {
-    margin: 20px;
+    margin: 10px;
     font-weight: 300;
-    font-size: 15px;
-    line-height: 24px;
+    /*font-size: 1.2vw; */
+    /*line-height: 24px;*/
 }
 
 a {
@@ -193,6 +193,7 @@ button {
     margin: 0;
     padding: 0;
     cursor: pointer;
+    background-color: transparent;  /*@shan added background color transparent*/
 }
 
 .full {
@@ -1283,7 +1284,8 @@ input::placeholder {
   right: 0;
   bottom: 0;
   left: 0;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;  /* custom added by shan*/
   background-position: center;
   transition: transform 0.2s;
 }
@@ -1345,15 +1347,16 @@ input::placeholder {
   font-family: Poppins, sans-serif;
 }
 .blog-card .description h1 {
-  line-height: 1;
+  line-height: 1.2;
   margin: 0;
-  font-size: 1.7rem;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 .blog-card .description h2 {
   font-size: 1rem;
   font-weight: 300;
   text-transform: uppercase;
-  color: #a2a2a2;
+  color: #160202;
   margin-top: 5px;
 }
 .blog-card .description .read-more {
@@ -1760,7 +1763,11 @@ body {
   width: 100%;
   height: 20em;
   opacity: 1;
-  background-image: url(../images/banner-bg.png);
+  background-image: url(../images/football-team-banner-cropped.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
   
 
 }
@@ -1789,24 +1796,6 @@ body {
     text-transform: uppercase;
     font-family: "Oswald", Sans-serif;
 }
-.football_banner_title_span_activity1 {
-    width: 100%;
-    font-size: 50px;
-    color: #110f0f;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-family: "Oswald", Sans-serif;
-    
-}
-.football_banner_title_span_activity2 {
-    width: 100%;
-    font-size: 50px;
-    color: #059b2b;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-family: "Oswald", Sans-serif;
-}
-
 .footballer-section{
   
  
@@ -1857,7 +1846,11 @@ body {
   width: 100%;
   height: 20em;
   opacity: 1;
-  background-image: url(../images/banner-bg.png);
+  background-image: url(../images/cricket-team-cropped.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
 }
 .cricket_banner_title_span1 {
     width: 100%;
@@ -1870,7 +1863,7 @@ body {
 .cricket_banner_title_span2 {
     width: 100%;
     font-size: 50px;
-    color: #06ff23;
+    color: #0ed826;
     font-weight: bold;
     text-transform: uppercase;
     font-family: "Oswald", Sans-serif;
@@ -1929,13 +1922,23 @@ body {
   padding-top: 0.4vw;
   padding-bottom: 0.4vw;
   border-radius: 5px;
-  
+  object-fit: cover;
   display: flex;
   justify-content: space-between;
   
 }
+.col-row-block-inner{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  
+  padding: 5px;
+}
+
 .carousel-inner{
   border-radius: 10px;
+
 
 }
 
@@ -1945,7 +1948,19 @@ body {
   border-color: #ffffff !important;
   box-shadow: 0 0 0 .2rem rgba(255, 255, 255, .25);
   background-size: 100% 100%;
+  width: fit-content;
 
+}
+.ad-section2{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-color: #ffffff !important;
+  box-shadow: 0 0 0 .2rem rgba(255, 255, 255, .25);
+  
+  object-fit: cover;
+  display: flex;
+  
 }
 
 /*test-ad block page in Home page end-------------------------------------------------------------*/
@@ -1953,9 +1968,11 @@ body {
 /*test-activity page in Home page start-------------------------------------------------------------*/
 
 .tournament-left-image{
-  height: 100%;
-  width: 100%;
+ 
+ 
   border-radius: 10px;
+  object-fit: cover;
+ 
   
 }
 .banner-tournament{
@@ -1969,15 +1986,40 @@ body {
   color: #14bf0b;
   text-align: left;
   margin: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  
+  
+ 
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+.football_banner_title_span_activity1 {
+    width: 100%;
+    /* font-size: 50px;*/
+    color: #2e2c2c;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Oswald", Sans-serif;
+}
+.football_banner_title_span_activity2 {
+    width: 100%;
+   /* font-size: 50px;*/
+    color: #0ca616;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Oswald", Sans-serif;
+}
+
+.main-row-tournament{
+  max-width: fit-content;
+}
+
+
+.winner-runner{
+  border-radius: 5px;
+}
+
 /*test-activity page in Home page end-------------------------------------------------------------*/
 
-/*test nested drop down menu start-------------------------------------------------------------*/
-
+/*test-drop down menu start-------------------------------------------------------------*/
 
     /* Position sub-menus */
     .dropdown-submenu {
@@ -2027,9 +2069,11 @@ body {
 
     /* Ensure dropdowns are visible above the navbar */
     .navbar .dropdown-menu {
-       left: 100%; /* Remove default margin to sit directly below the toggle */
+        left: 50%;  
+        margin-top: 0; /* Remove default margin to sit directly below the toggle */
         border-top-left-radius: 0;
         border-top-right-radius: 0;
+        right: auto;                   /* custom added by shan for having background to whole of text in drop down */
     }
 
     /* Override Bootstrap's default dropdown-menu background */
@@ -2042,4 +2086,837 @@ body {
         border-top: 1px solid rgba(0, 0, 0, 0.1);
     }
 
-/*test nested drop down menu end-------------------------------------------------------------*/
+/*test-drop down menu end-------------------------------------------------------------*/
+
+/*test-membership-banner start-------------------------------------------------------------*/
+
+.football_banner_title_span_member1 {
+    width: 100%;
+    /* font-size: 50px;*/
+    color: #2e2c2c;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Oswald", Sans-serif;
+}
+.football_banner_title_span_member2 {
+    width: 100%;
+   /* font-size: 50px;*/
+    color: #0cb9c2;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Oswald", Sans-serif;
+}
+.banner-tournament-membership{
+  width: 100%;
+  height: 20em;
+  opacity: 1; 
+  background-image: url("../images/Membership-page-cropped.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
+}
+.banner-heading-membership{
+  color: #14bf0b;
+  text-align: center;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+.position-footballer{
+  text-align: center;
+  color: #ffffff;
+ 
+}
+.banner-badminton{
+  width: 100%;
+  height: 20em;
+  opacity: 1;
+  background-image: url(../images/banner-badminton2.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+.badminton_banner_title_span1 {
+    width: 100%;
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Oswald", Sans-serif;
+}
+.badminton_banner_title_span2 {
+    width: 100%;
+    font-size: 50px;
+    color: #0ecbd8;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Oswald", Sans-serif;
+}
+
+/*test-membership-banner end-------------------------------------------------------------*/
+
+.banner-volleyball{
+  width: 100%;
+  height: 20em;
+  opacity: 1;
+  background-image: url(../images/banner-volleyball.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+.volleyball_banner_title_span1 {
+    width: 100%;
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Oswald", Sans-serif;
+}
+.volleyball_banner_title_span2 {
+    width: 100%;
+    font-size: 50px;
+    color: #0ecbd8;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: "Oswald", Sans-serif;
+}
+
+/*  previous match result section start----------------------------------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+:root {
+	--color-text-primary: #1c2a38;
+	--color-text-secondary: #8A8F98;
+	--color-text-alert: #d72641;
+	--color-text-icon: #dbdade;
+	--color-bg-primary: #fff;
+	--color-bg-secondary: #f3f5f9;
+	--color-bg-alert: #fdeaec;
+	--color-theme-primary: #623ce6;
+}
+
+button,
+input,
+select,
+textarea {
+	font: inherit;
+}
+
+img {
+	display: block;
+}
+
+strong {
+	font-weight: 600;
+}
+
+body {
+	
+  font-family: "rajdhani", sans-serif;
+	line-height: 1.5;
+	color: var(--color-text-primary);
+	background-color: var(--color-bg-secondary);
+}
+
+.container-previous-results{
+  display: flex;
+  flex-wrap: wrap;
+	flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box !important;
+  padding-bottom: 2vh;
+  background-color: #1c1c1c;
+  
+
+}
+
+.match {
+  margin-top: 5vh;
+  margin-left: 1%;
+  margin-right: 1%;
+	background-color: var(--color-bg-primary);
+	display: flex;
+	flex-direction: column;
+	
+  
+	border-radius: 10px;
+	box-shadow: 0 0 2px 0 rgba(#303030, 0.1), 0 4px 4px 0 rgba(#303030, 0.1);
+}
+
+.match-header {
+	display: flex;
+	border-bottom: 2px solid rgba(#303030, 0.1);
+	padding: 16px;
+}
+
+.match-status {
+	background-color: var(--color-bg-alert);
+	color: var(--color-text-alert);
+	padding: 8px 12px;
+	border-radius: 6px;
+	font-weight: 600;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	line-height: 1;
+	margin-right: auto;
+	&:before {
+		content: "";
+		display: block;
+		width: 6px;
+		height: 6px;
+		background-color: currentColor;
+		border-radius: 50%;
+		margin-right: 8px;
+	}
+}
+
+.match-tournament {
+	display: flex;
+	align-items: center;
+	font-weight: 600;
+	img {
+		width: 20px;
+		margin-right: 12px;
+	}
+}
+
+.match-actions {
+	display: flex;
+	margin-left: auto;
+}
+
+.btn-icon {
+	border: 0;
+	background-color: transparent;
+	color: var(--color-text-icon);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.match-content {
+	display: flex;
+	position: relative;
+}
+
+.column {
+	padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: calc(100% / 3);
+}
+
+.team {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.team-logo {
+	width: 100px;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	background-color: var(--color-bg-primary);
+	box-shadow: 0 4px 4px 0 rgba(#303030, 0.15),
+		0 0 0 15px var(--color-bg-secondary);
+	img {
+		width: 50px;
+	}
+}
+
+.team-name {
+	text-align: center;
+	margin-top: 24px;
+	font-size: 20px;
+	font-weight: 600;
+  overflow-wrap: break-word;
+}
+
+.match-details {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.match-date, .match-referee {
+	font-size: 14px;
+	color: var(--color-text-secondary);
+	strong {
+		color: var(--color-text-primary);
+	}
+  text-align: center;
+}
+
+.match-score {
+	margin-top: 12px;
+	display: flex;
+	align-items: center;
+}
+
+.match-score-number {
+	font-size: 48px;
+	font-weight: 600;
+	line-height: 1;
+	&--leading {
+		color: var(--color-theme-primary);
+	}
+}
+
+.match-score-divider {
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 1;
+	color: var(--color-text-icon);
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.match-time-lapsed {
+	color: #DF9443;
+	font-size: 14px;
+	font-weight: 600;
+	margin-top: 8px;
+}
+
+.match-referee {
+	margin-top: 12px;
+}
+
+.match-bet-options {
+	display: flex;
+	margin-top: 8px;
+	padding-bottom: 12px;
+}
+
+.match-bet-option {
+	margin-left: 4px;
+	margin-right: 4px;
+	border: 1px solid var(--color-text-icon);
+	background-color: #F9f9f9;
+	border-radius: 2px;
+	color: var(--color-text-secondary);
+	font-size: 14px;
+	font-weight: 600;
+	padding: 4px 8px;
+}
+
+.match-bet-place-3 {
+	position: absolute;
+	bottom: -16px;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 0;
+	background-color:red;
+	border-radius: 6px;
+	padding: 10px 48px;
+	color: rgba(#fff, 0.9);
+	font-size: 14px;
+	box-shadow: 0 4px 8px 0 rgba(#303030, 0.25);
+}
+
+.match-bet-place-2 {
+	position: absolute;
+	bottom: -16px;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 0;
+	background-color:rgb(13, 210, 13);
+	border-radius: 6px;
+	padding: 10px 48px;
+	color: rgba(#fff, 0.9);
+	font-size: 14px;
+	box-shadow: 0 4px 8px 0 rgba(#303030, 0.25);
+}
+
+.match-bet-place-1 {
+	position: absolute;
+	bottom: -16px;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 0;
+	background-color:rgb(13, 210, 13);
+	border-radius: 6px;
+	padding: 10px 48px;
+	color: rgba(#fff, 0.9);
+	font-size: 14px;
+	box-shadow: 0 4px 8px 0 rgba(#303030, 0.25);
+}
+.previous-results-heading h3{
+  color: white;
+  background-color: #1c1c1c;
+  padding: 1vw;
+  
+
+}
+.previous-results-heading h3:hover{
+  color: greenyellow;
+  cursor: pointer;
+}
+/*previous match result section end----------------------------------------*/
+
+/*Upcoming match section start----------------------------------------*/
+.upcoming-match-section {
+            
+            background-image: url(../images/coolbackgrounds-particles-stellar.png);
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: cover;
+          
+            background-position: center;
+        }
+
+.match-score .colon {
+            color: #EF4444; /* red-500 equivalent */
+            font-weight: bold;
+}
+/*Upcoming match section end----------------------------------------*/
+
+/*Trophies and awards section start----------------------------------------*/
+.trophies-awards-section {
+            background-color: #2D3748;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section-heading-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .section-heading-wrapper::before,
+        .section-heading-wrapper::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: #EF4444; /* red-500 equivalent */
+            margin: 0 1rem;
+        }
+
+        .carousel-item-multiple {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Responsive styles to show 4 items on larger screens */
+        @media (min-width: 992px) {
+            .carousel-item-multiple .col-md-3 {
+                display: block;
+            }
+        }
+ 
+        .trophy{
+          align-items: center;
+          flex: 1;
+          aspect-ratio: 3/4; /* Makes image fill the height of its parent flex item */
+          object-fit: contain;
+          scale: 0.8;
+        }
+ /*Trophies and awards section end----------------------------------------*/
+
+/*Library section book banner and search start----------------------------------------*/
+.banner-book-main {
+    width: 100%;
+    height: fit-content; /* Full viewport height: 100vh-edited to fit content custom shan */
+    background: linear-gradient(90deg, #84de84 0%, #21c00f 100%); /* Orange gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.banner-book-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space out text and book */
+    max-width: 1200px; /* Max width of content inside banner */
+    width: 90%; /* Responsive width */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.text-section {
+    flex: 1; /* Allows text section to take up available space */
+    color: white;
+    font: "rajdhani";
+    text-align: left;
+    padding-right: 40px; /* Space between text and book */
+    
+}
+
+.text-section .author {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.text-section h1 {
+    font-size: 4em; /* Large heading */
+    margin: 0 0 20px 0;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    
+}
+
+.text-section .description {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 500px; /* Control description length */
+    white-space: nowrap;;
+}
+
+/* Search bar styles */
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 450px; /* Length of the search bar */
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.search-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 1.1em;
+    color: #333;
+    background-color: transparent;
+}
+
+.search-input::placeholder {
+    color: #aaa;
+}
+
+.search-button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    color: #555;
+    font-size: 1.2em;
+    transition: color 0.2s ease-in-out;
+}
+
+.search-button:hover {
+    color: #FF6F00; /* Matches the lighter orange of the banner */
+}
+
+.book-mockup {
+    flex-shrink: 0; /* Prevents book from shrinking */
+    width: 300px; /* Adjust book image width as needed */
+    height: auto;
+    transform: rotate(0deg); /* Tilt the book as in the image */
+    border-radius: 0px; /* Slight rounded edges for the book */
+    margin-right: 0px; /* Pull the book slightly off to the right */
+    position: relative;
+    z-index: 1; /* Ensure book is above other elements if any */
+}
+
+.book-mockup img.book-cover {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below image */
+    border-radius: 0px; /* Apply to the image itself */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .banner-book-content {
+        flex-direction: column; /* Stack items vertically on small screens */
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .text-section {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+
+    .text-section h1 {
+        font-size: 3em;
+    }
+
+    .text-section .description {
+        max-width: 100%;
+    }
+
+    .search-container {
+        max-width: 100%; /* Search bar can be wider on small screens */
+        margin-top: 20px;
+    }
+
+    .book-mockup {
+        transform: rotate(0deg); /* No tilt on small screens */
+        margin-right: 0;
+        width: 180px; /* Smaller book on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .text-section h1 {
+        font-size: 2.5em;
+    }
+    .search-input {
+        font-size: 1em;
+    }
+    .search-button {
+        font-size: 1em;
+    }
+}
+
+/*Library section book banner and search end----------------------------------------*/
+
+/*Library section book list start----------------------------------------*/
+.bookshelf {
+  width: 100%;
+  height: fit-content;
+  background: rgb(255,255,255);
+  background-position: center center;
+  background-size: cover;
+  position:relative;  
+  margin-top: 5vh;
+}
+
+.book, .book img, .book::after,
+.book::before {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  display: table;
+  text-align: center;
+}
+
+ul {
+  display: table-cell;
+  vertical-align: middle;
+  position: relative;
+  top: 0.5vh;
+  left: 20 px;
+  
+}
+
+.list-inline {
+  display: block;
+  margin: 0 auto;
+  list-style: none;
+  margin-top: 3vh;
+}
+.list-inline > li {
+  display: inline-block;
+  margin-left: 2em;
+}
+.list-inline > li:first-child {
+  margin-left: 0;
+}
+
+.book {
+  cursor: pointer;
+  display: block;
+  width: 150px;
+  height: 220px; 
+  position: relative;
+  background: white;
+  z-index: 1;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 9px 20px 0 rgba(0, 0, 0, 0.25);
+  
+  -webkit-transition: box-shadow 0.3s linear;
+  transition: box-shadow 0.3s linear;
+}
+
+.book img {
+  width: inherit;
+  height: inherit;
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+  -webkit-transition: all 0.45s ease;
+  transition: all 0.45s ease;
+}
+
+.book:hover {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25), 0 9px 20px 0 rgba(0, 0, 0, 0.45);
+}
+.book:hover img {
+  -webkit-transform: rotateY(-25deg);
+          transform: rotateY(-25deg);
+  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.book::after,
+.book::before {
+  content: "";
+  display: block;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  background: white;
+  border: 1px solid #d9d9d9;
+}
+
+.book::before {
+  left: -3px;
+}
+
+.book::after {
+  left: -6px;
+}
+.book-info {
+  margin-top: 10px;
+  text-align: center;
+  color: #333;
+}
+
+.book-info h4 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.0;
+}
+
+.book-info p {
+  font-size: 12px;
+  margin: 0;
+  color: #666;
+}
+/* By default, hide the book's spine */
+.book::before,
+.book::after {
+  visibility: hidden;
+}
+
+/* Show the spine when the book is hovered over */
+.book:hover::before,
+.book:hover::after {
+  visibility: visible;
+}
+
+/*Library section book list  end----------------------------------------*/
+
+
+
+/*Read more section in blog post start----------------------------------------*/
+/* Container for the text you want to truncate */
+.expandable-text {
+  max-height: 100px; /* Adjust this value to show more or less text */
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.3s ease-out; /* Smooth expansion animation */
+}
+
+
+/* Fading effect at the bottom of the truncated text */
+.fade-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.667), rgba(255, 255, 255, 0));
+}
+
+/* Style for the 'Read more' button */
+.read-more-btn {
+  display: block;
+  margin-top: 10px;
+  color: #0dfd31; /* Blue color for a clickable link */
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: right;
+}
+
+/* Class added by JavaScript to expand the text */
+.blog-card.expanded .expandable-text {
+  max-height: 5000px; /* Large value to ensure it expands fully */
+}
+
+/* Hide the fade effect when the text is expanded */
+.blog-card.expanded .fade-overlay {
+  display: none;
+}
+
+/*Read more section in blog post end----------------------------------------*/
+
+/*Read more section share button start----------------------------------------*/
+/* Container to hold the share button and read more link */
+.share-and-readmore-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Style for the share button icon */
+.share-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #555; /* A neutral color for the icon */
+  font-size: 1.2rem;
+  padding: 5px;
+  transition: color 0.2s;
+}
+
+.share-btn:hover {
+  color: #00ff08; /* Color on hover */
+}
+
+/* The read-more-btn style remains the same but its parent now uses flexbox */
+.read-more-btn {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/*Read more section share button end----------------------------------------*/
